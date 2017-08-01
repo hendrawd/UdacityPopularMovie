@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_padding">4dp</dimen>
+    <dimen name="medium_padding">8dp</dimen>
+    <dimen name="detail_section_text_size">18sp</dimen>
+    <dimen name="progress_bar_width">20dp</dimen>
+    <dimen name="progress_bar_height">20dp</dimen>
+    <dimen name="content_inset_start_with_navigation">0dp</dimen>
+    <dimen name="expanded_title_margin_end">64dp</dimen>
+    <dimen name="expanded_title_margin_start">48dp</dimen>
+    <dimen name="button_speaker_width">32dp</dimen>
+    <dimen name="button_speaker_height">32dp</dimen>
+    <dimen name="vertical_line_width">1dp</dimen>
+    <integer name="column_number">2</integer>
+</resources>

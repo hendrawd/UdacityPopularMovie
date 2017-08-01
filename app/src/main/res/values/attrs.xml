@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ContinuedLineView">
+
+        <!-- any custom attributes -->
+        <!--<attr name="title" format="string" />-->
+
+        <!-- standard attributes, note android: prefix and no format attribute -->
+        <attr name="android:color" />
+
+    </declare-styleable>
+</resources>

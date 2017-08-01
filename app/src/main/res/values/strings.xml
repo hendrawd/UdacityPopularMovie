@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">PopularMovies</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="processing">Processing</string>
+    <string name="overview">Overview</string>
+    <string name="related_videos">Related videos</string>
+    <string name="latest_reviews">Latest Reviews</string>
+    <string name="release_date">Release date</string>
+    <string name="original_title">Original title</string>
+    <string name="genre">Genre</string>
+    <string name="rating">Rating</string>
+    <string name="rating_number">%s/5.00</string>
+    <string name="video_type">Type : %s</string>
+    <string name="share_with">Share With</string>
+    <string name="no_information">No information</string>
+    <string name="no_new_movies">No new movies in %s category</string>
+    <string name="no_internet_connection">No internet connection!</string>
+    <string name="review_author">Author: %s</string>
+    <string name="no_data">No data!</string>
+    <string name="same_category">Same category with previous</string>
+    <string name="changing_category">Changing category to %s</string>
+    <string name="category_popular">Popular</string>
+    <string name="category_top_rated">Top Rated</string>
+    <string name="category_favorite">Favorite</string>
+    <string name="category_upcoming">Upcoming</string>
+    <string name="category_now_playing">Now Playing</string>
+    <string name="category_latest">Latest</string>
+    <string name="no_movie_data">No movie data!</string>
+    <string name="poster_image">Poster Image</string>
+    <string name="title_menu_share">Share</string>
+    <string name="title_menu_favorite">Favorite</string>
+    <string name="no_trailer">No Trailer</string>
+    <string name="share_first_trailer">[PopularMovies] Watch this awesome trailer: %s</string>
+    <string name="added_to_favorite">Added to favorite</string>
+    <string name="removed_from_favorite">Removed from favorite</string>
+</resources>
