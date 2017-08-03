@@ -88,7 +88,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
     @BindView(R.id.appbar)
     AppBarLayout appbar;
     @BindView(R.id.iv_backdrop_image)
-    AutoFitImageView ivBackdropImage;
+    ImageView ivBackdropImage;
     @BindView(R.id.tv_overview)
     TextView tvOverview;
     @BindView(R.id.tv_release_date)
@@ -179,9 +179,14 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
         }
 
         if (savedInstanceState != null && savedInstanceState.containsKey(BUNDLE_SCROLL_POSITION)) {
-            int[] scrollPosition = savedInstanceState.getIntArray(BUNDLE_SCROLL_POSITION);
+            final int[] scrollPosition = savedInstanceState.getIntArray(BUNDLE_SCROLL_POSITION);
             if (scrollPosition != null && scrollPosition.length == 2) {
-                nestedScrollView.scrollTo(scrollPosition[0], scrollPosition[1] + Util.getDisplayWidth(this) / 4);
+                nestedScrollView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        nestedScrollView.scrollTo(scrollPosition[0], scrollPosition[1]);
+                    }
+                });
             }
         }
     }
@@ -330,13 +335,15 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
         collapsingToolbar.setTitle(movieData.getTitle());
         collapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(this, R.color.colorAccent));
         collapsingToolbar.setContentScrimColor(ContextCompat.getColor(this, R.color.scrim));
+        appbar.setExpanded(false);
 
-        //set backdrop image
+        // set backdrop image
         String backdropPath = movieData.getBackdropPath();
         if (TextUtils.isEmpty(backdropPath)) {
             ivBackdropImage.setImageResource(R.drawable.error_landscape);
         } else {
             RequestOptions options = new RequestOptions()
+                    .centerCrop()
                     .error(R.drawable.error_landscape)
                     .placeholder(R.drawable.placeholder_landscape);
             Glide.with(ivBackdropImage.getContext())
@@ -344,6 +351,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
                     .apply(options)
                     .into(ivBackdropImage);
         }
+
         //set poster image
         String posterPath = movieData.getPosterPath();
         if (TextUtils.isEmpty(posterPath)) {
@@ -578,6 +586,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
     @Override
     public Loader<Movie> onCreateLoader(int id, Bundle args) {
         return new AsyncTaskLoader<Movie>(this) {
+
             @Override
             protected void onStartLoading() {
                 forceLoad();

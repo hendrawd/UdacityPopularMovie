@@ -27,18 +27,17 @@
             app:layout_scrollFlags="exitUntilCollapsed|scroll">
 
             <ProgressBar
+                android:id="@+id/pb_backdrop_image"
                 android:layout_width="@dimen/progress_bar_width"
                 android:layout_height="@dimen/progress_bar_height"
                 android:layout_gravity="center"
                 android:indeterminate="true"/>
 
-            <ganteng.hendrawd.popularmovies.view.AutoFitImageView
+            <ImageView
                 android:id="@+id/iv_backdrop_image"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fitsSystemWindows="false"
+                android:layout_height="200dp"
                 android:scaleType="fitCenter"
-                android:transitionName="image"
                 app:layout_collapseMode="parallax"
                 tools:targetApi="lollipop"/>
 
