@@ -369,8 +369,15 @@ public class MainActivity extends BaseActivity
      * @return boolean indicating there is new movies or not
      */
     private boolean hasNewMovie(GetMovieList newResponse) {
-        return !((MovieAdapter) mRecyclerView.getAdapter()).getData().get(0).getId()
-                .equals(newResponse.getResults().get(0).getId());
+        MovieAdapter movieAdapter = (MovieAdapter) mRecyclerView.getAdapter();
+        ArrayList<Movie> currentMovieList = movieAdapter.getData();
+        if (currentMovieList == null || currentMovieList.isEmpty()) {
+            return true;
+        }
+        ArrayList<Movie> newMovieList = newResponse.getResults();
+        Movie newestCurrentMovie = currentMovieList.get(0);
+        Movie newestNewMovie = newMovieList.get(0);
+        return !newestCurrentMovie.getId().equals(newestNewMovie.getId());
     }
 
     private void changeCategory(String category) {
