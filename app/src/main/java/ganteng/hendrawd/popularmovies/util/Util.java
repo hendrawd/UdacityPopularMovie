@@ -6,6 +6,7 @@ import android.app.ActivityOptions;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -202,5 +203,23 @@ public class Util {
         values.put(FavoriteMovieContract.FavoriteMovieEntry.COLUMN_VOTE_AVERAGE, movie.getVoteAverage());
         values.put(FavoriteMovieContract.FavoriteMovieEntry.COLUMN_GENRE_IDS, new Gson().toJson(movie.getGenreIds()));
         return values;
+    }
+
+    /**
+     * Fix for
+     * https://stackoverflow.com/questions/21657045/contextthemewrapper-cannot-be-cast-to-activity
+     *
+     * @param cont
+     * @return
+     */
+    public static Activity scanForActivity(Context cont) {
+        if (cont == null)
+            return null;
+        else if (cont instanceof Activity)
+            return (Activity) cont;
+        else if (cont instanceof ContextWrapper)
+            return scanForActivity(((ContextWrapper) cont).getBaseContext());
+
+        return null;
     }
 }

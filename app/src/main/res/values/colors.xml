@@ -5,7 +5,7 @@
     <color name="colorPrimaryLight">#D1C4E9</color>
     <color name="colorAccent">#E040FB</color>
     <color name="text">#FFFFFF</color>
-    <color name="white_transparent">#90ffffff</color>
-    <color name="white_selector">#a7a9ac</color>
+    <color name="white_movie_title_background">#90ffffff</color>
+    <color name="white_half_transparent">#80ffffff</color>
     <color name="scrim">#aa000000</color>
 </resources>

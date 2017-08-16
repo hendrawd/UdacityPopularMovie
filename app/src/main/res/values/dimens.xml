@@ -11,5 +11,8 @@
     <dimen name="button_speaker_width">32dp</dimen>
     <dimen name="button_speaker_height">32dp</dimen>
     <dimen name="vertical_line_width">1dp</dimen>
-    <integer name="column_number">2</integer>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="line_height">1dp</dimen>
+    <dimen name="grid_spacing">8dp</dimen>
 </resources>

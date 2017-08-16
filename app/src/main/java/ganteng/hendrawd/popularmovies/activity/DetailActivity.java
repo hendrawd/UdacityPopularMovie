@@ -546,7 +546,8 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
 
     private View getLineView() {
         ContinuedLineView continuedLineView = new ContinuedLineView(this);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int) Util.dp2px(this, 1));
+        int lineHeight = getResources().getDimensionPixelSize(R.dimen.line_height);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, lineHeight);
         continuedLineView.setLayoutParams(params);
         continuedLineView.setLineColor(ContextCompat.getColor(this, R.color.colorAccent));
         return continuedLineView;

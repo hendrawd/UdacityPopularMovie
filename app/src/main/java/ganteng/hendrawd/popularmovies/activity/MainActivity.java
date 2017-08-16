@@ -38,7 +38,6 @@ import ganteng.hendrawd.popularmovies.network.model.Category;
 import ganteng.hendrawd.popularmovies.network.model.Movie;
 import ganteng.hendrawd.popularmovies.network.response.GetMovieList;
 import ganteng.hendrawd.popularmovies.util.NetworkChecker;
-import ganteng.hendrawd.popularmovies.util.Util;
 import ganteng.hendrawd.popularmovies.view.CustomToast;
 import ganteng.hendrawd.popularmovies.view.EndlessRecyclerViewScrollListener;
 import ganteng.hendrawd.popularmovies.view.GridSpacingItemDecoration;
@@ -128,7 +127,8 @@ public class MainActivity extends BaseActivity
     private void init() {
         int columnNumber = getResources().getInteger(R.integer.column_number);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, columnNumber));
-        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(columnNumber, (int) Util.dp2px(this, 8), true));
+        int gridSpacing = getResources().getDimensionPixelSize(R.dimen.grid_spacing);
+        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(columnNumber, gridSpacing, true));
         mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

@@ -20,6 +20,8 @@ import ganteng.hendrawd.popularmovies.network.UrlComposer;
 import ganteng.hendrawd.popularmovies.network.model.Movie;
 import ganteng.hendrawd.popularmovies.view.AutoFitImageView;
 
+import static ganteng.hendrawd.popularmovies.util.Util.scanForActivity;
+
 /**
  * @author hendrawd on 6/23/16
  */
@@ -46,7 +48,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         @Override
         public void onClick(View view) {
-            final Context context = view.getContext();
+            final Context context = scanForActivity(view.getContext());
             final int clickPosition = getAdapterPosition();
             ((ClickListener) context).onItemClick(clickPosition, getValueAt(clickPosition), mImageView);
         }
