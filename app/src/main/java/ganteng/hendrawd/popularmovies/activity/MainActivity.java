@@ -241,7 +241,7 @@ public class MainActivity extends BaseActivity
     /**
      * Get content from API server
      *
-     * @param page
+     * @param page int indicating the page to request from server
      */
     private void getContent(int page) {
         if (NetworkChecker.isNetworkAvailable(this)) {
@@ -276,7 +276,7 @@ public class MainActivity extends BaseActivity
     /**
      * Volley callback when request error
      *
-     * @param volleyError
+     * @param volleyError VolleyError object that contains the error data
      */
     @Override
     public void onErrorResponse(VolleyError volleyError) {
@@ -293,7 +293,7 @@ public class MainActivity extends BaseActivity
     /**
      * Volley callback when request success
      *
-     * @param currentResponse
+     * @param currentResponse GetMovieList object that contains the response data from server
      */
     @Override
     public void onResponse(@NonNull GetMovieList currentResponse) {
@@ -365,7 +365,7 @@ public class MainActivity extends BaseActivity
     /**
      * Check if there is new movies from the same category
      *
-     * @param newResponse
+     * @param newResponse GetMovieList object that contains the response data from server
      * @return boolean indicating there is new movies or not
      */
     private boolean hasNewMovie(GetMovieList newResponse) {

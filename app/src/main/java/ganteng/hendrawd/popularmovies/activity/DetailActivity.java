@@ -316,7 +316,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
      * workaround for shared element transition stuck
      * http://www.androiddesignpatterns.com/2015/03/activity-postponed-shared-element-transitions-part3b.html
      *
-     * @param sharedElement
+     * @param sharedElement View that has the shared element with the previous activity
      */
     private void scheduleStartPostponedTransition(final View sharedElement) {
         sharedElement.getViewTreeObserver().addOnPreDrawListener(

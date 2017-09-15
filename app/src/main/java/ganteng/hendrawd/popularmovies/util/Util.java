@@ -209,16 +209,16 @@ public class Util {
      * Fix for
      * https://stackoverflow.com/questions/21657045/contextthemewrapper-cannot-be-cast-to-activity
      *
-     * @param cont
+     * @param context
      * @return
      */
-    public static Activity scanForActivity(Context cont) {
-        if (cont == null)
+    public static Activity scanForActivity(Context context) {
+        if (context == null)
             return null;
-        else if (cont instanceof Activity)
-            return (Activity) cont;
-        else if (cont instanceof ContextWrapper)
-            return scanForActivity(((ContextWrapper) cont).getBaseContext());
+        else if (context instanceof Activity)
+            return (Activity) context;
+        else if (context instanceof ContextWrapper)
+            return scanForActivity(((ContextWrapper) context).getBaseContext());
 
         return null;
     }
