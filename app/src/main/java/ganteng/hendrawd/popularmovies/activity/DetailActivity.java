@@ -482,7 +482,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
 
     private void generateVideoView(final Video video, boolean lastItem) {
         final ViewGroup nullParent = null;
-        View row = LayoutInflater.from(this).inflate(R.layout.row_video, nullParent);
+        View row = LayoutInflater.from(this).inflate(R.layout.item_video, nullParent);
         AutoFitImageView ivThumbnail = (AutoFitImageView) row.findViewById(R.id.iv_thumbnail);
         TextView tvName = (TextView) row.findViewById(R.id.tv_name);
         TextView tvType = (TextView) row.findViewById(R.id.tv_type);
@@ -521,7 +521,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
     private void generateReviewView(final Review review, boolean lastItem) {
         final ViewGroup nullParent = null;
         LayoutInflater inflater = LayoutInflater.from(this);
-        View row = inflater.inflate(R.layout.row_review, nullParent);
+        View row = inflater.inflate(R.layout.item_review, nullParent);
         TextView tvAuthor = (TextView) row.findViewById(R.id.tv_author);
         TextView tvContent = (TextView) row.findViewById(R.id.tv_content);
 
